@@ -77,9 +77,9 @@ export default function AuditorPanel() {
 
   if (loading) {
     return (
-      <div className="bg-gray-900 border border-gray-700 rounded-lg p-8 text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500 mx-auto mb-4"></div>
-        <p className="text-gray-400">Loading audit data...</p>
+      <div className="bg-[#212830] border border-[#3A4754] rounded p-8 text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#5E725A] mx-auto mb-4"></div>
+        <p className="text-[#9CA3AF]">Loading audit data...</p>
       </div>
     );
   }
@@ -87,28 +87,28 @@ export default function AuditorPanel() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+      <div className="bg-[#212830] border border-[#3A4754] rounded p-6">
         <div className="flex items-center gap-3 mb-6">
-          <Shield className="w-8 h-8 text-green-500" />
+          <Shield className="w-8 h-8 text-[#5E725A]" />
           <div>
-            <h2 className="text-2xl font-bold text-white">Auditor Dashboard</h2>
-            <p className="text-gray-400 text-sm">Verify and audit checkpoint records</p>
+            <h2 className="text-2xl font-bold text-[#E1E3E4]">Auditor Dashboard</h2>
+            <p className="text-[#9CA3AF] text-sm">Verify and audit checkpoint records</p>
           </div>
         </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-gray-800 border border-gray-700 rounded p-4">
-            <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Total</p>
-            <p className="text-white text-2xl font-bold">{stats.total}</p>
+          <div className="bg-[#1E252F] border border-[#3A4754] rounded p-4">
+            <p className="text-[#9CA3AF] text-xs uppercase tracking-wide mb-1">Total</p>
+            <p className="text-[#E1E3E4] text-2xl font-bold">{stats.total}</p>
           </div>
-          <div className="bg-green-900/20 border border-green-700 rounded p-4">
-            <p className="text-green-400 text-xs uppercase tracking-wide mb-1">Verified</p>
-            <p className="text-green-400 text-2xl font-bold">{stats.verified}</p>
+          <div className="bg-[#708C6E]/30 border border-[#708C6E] rounded p-4 glow-success">
+            <p className="text-[#708C6E] text-xs uppercase tracking-wide mb-1">Verified</p>
+            <p className="text-[#708C6E] text-2xl font-bold">{stats.verified}</p>
           </div>
-          <div className="bg-yellow-900/20 border border-yellow-700 rounded p-4">
-            <p className="text-yellow-400 text-xs uppercase tracking-wide mb-1">Pending</p>
-            <p className="text-yellow-400 text-2xl font-bold">{stats.pending}</p>
+          <div className="bg-[#C0A66B]/20 border border-[#C0A66B]/50 rounded p-4">
+            <p className="text-[#C0A66B] text-xs uppercase tracking-wide mb-1">Pending</p>
+            <p className="text-[#C0A66B] text-2xl font-bold">{stats.pending}</p>
           </div>
           <div className="bg-red-900/20 border border-red-700 rounded p-4">
             <p className="text-red-400 text-xs uppercase tracking-wide mb-1">Flagged</p>
@@ -118,29 +118,29 @@ export default function AuditorPanel() {
       </div>
 
       {/* Checkpoints List */}
-      <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-white mb-4">Checkpoints Pending Review</h3>
+      <div className="bg-[#212830] border border-[#3A4754] rounded p-6">
+        <h3 className="text-lg font-semibold text-[#E1E3E4] mb-4">Checkpoints Pending Review</h3>
         <div className="space-y-3">
           {checkpoints
             .filter(cp => !cp.verified && !cp.flagged)
             .map((checkpoint) => (
               <div
                 key={checkpoint.id}
-                className="bg-gray-800 border border-gray-700 rounded p-4 hover:border-gray-600 transition-colors cursor-pointer"
+                className="bg-[#1E252F] border border-[#3A4754] rounded p-4 hover:border-[#5E725A] transition-colors cursor-pointer"
                 onClick={() => setSelectedCheckpoint(checkpoint)}
               >
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-white font-mono text-sm mb-1">
+                    <p className="text-[#E1E3E4] font-mono text-sm mb-1">
                       {checkpoint.trackId} / {checkpoint.crateId}
                     </p>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-[#9CA3AF] text-xs">
                       {new Date(checkpoint.timestamp).toLocaleString()}
                     </p>
                   </div>
                   <div className="text-right">
-                    <p className="text-gray-400 text-xs mb-1">{checkpoint.operator}</p>
-                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold bg-yellow-900/30 text-yellow-400 border border-yellow-700">
+                    <p className="text-[#9CA3AF] text-xs mb-1">{checkpoint.operator}</p>
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold bg-[#C0A66B]/20 text-[#C0A66B] border border-[#C0A66B]/50">
                       <AlertTriangle className="w-3 h-3" />
                       Pending Review
                     </span>
@@ -150,7 +150,7 @@ export default function AuditorPanel() {
             ))}
           
           {checkpoints.filter(cp => !cp.verified && !cp.flagged).length === 0 && (
-            <p className="text-center text-gray-400 py-8">All checkpoints have been reviewed</p>
+            <p className="text-center text-[#9CA3AF] py-8">All checkpoints have been reviewed</p>
           )}
         </div>
       </div>
@@ -158,15 +158,15 @@ export default function AuditorPanel() {
       {/* Detail Modal */}
       {selectedCheckpoint && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-900 border border-gray-700 rounded-lg p-6 max-w-2xl w-full">
+          <div className="bg-[#212830] border border-[#3A4754] rounded p-6 max-w-2xl w-full">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-white">Checkpoint Details</h3>
+              <h3 className="text-xl font-bold text-[#E1E3E4]">Checkpoint Details</h3>
               <button
                 onClick={() => {
                   setSelectedCheckpoint(null);
                   setAuditorNotes('');
                 }}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-[#9CA3AF] hover:text-[#E1E3E4] transition-colors text-2xl"
               >
                 ×
               </button>
@@ -174,42 +174,42 @@ export default function AuditorPanel() {
 
             <div className="space-y-4 mb-6">
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-800 p-4 rounded border border-gray-700">
-                  <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Track ID</p>
-                  <p className="text-white font-mono">{selectedCheckpoint.trackId}</p>
+                <div className="bg-[#1E252F] p-4 rounded border border-[#3A4754]">
+                  <p className="text-xs text-[#C0A66B] uppercase tracking-wide mb-1">Track ID</p>
+                  <p className="text-[#E1E3E4] font-mono">{selectedCheckpoint.trackId}</p>
                 </div>
-                <div className="bg-gray-800 p-4 rounded border border-gray-700">
-                  <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Crate ID</p>
-                  <p className="text-white font-mono">{selectedCheckpoint.crateId}</p>
+                <div className="bg-[#1E252F] p-4 rounded border border-[#3A4754]">
+                  <p className="text-xs text-[#C0A66B] uppercase tracking-wide mb-1">Crate ID</p>
+                  <p className="text-[#E1E3E4] font-mono">{selectedCheckpoint.crateId}</p>
                 </div>
               </div>
 
-              <div className="bg-gray-800 p-4 rounded border border-gray-700">
-                <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Unit</p>
-                <p className="text-white">{selectedCheckpoint.unitName}</p>
+              <div className="bg-[#1E252F] p-4 rounded border border-[#3A4754]">
+                <p className="text-xs text-[#C0A66B] uppercase tracking-wide mb-1">Unit</p>
+                <p className="text-[#E1E3E4]">{selectedCheckpoint.unitName}</p>
               </div>
 
-              <div className="bg-gray-800 p-4 rounded border border-gray-700">
-                <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Location</p>
-                <p className="text-white font-mono text-sm">
+              <div className="bg-[#1E252F] p-4 rounded border border-[#3A4754]">
+                <p className="text-xs text-[#C0A66B] uppercase tracking-wide mb-1">Location</p>
+                <p className="text-[#E1E3E4] font-mono text-sm">
                   {selectedCheckpoint.geolocation.latitude.toFixed(6)}, {selectedCheckpoint.geolocation.longitude.toFixed(6)}
                 </p>
               </div>
 
-              <div className="bg-gray-800 p-4 rounded border border-gray-700">
-                <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Report</p>
-                <p className="text-white">{selectedCheckpoint.report}</p>
+              <div className="bg-[#1E252F] p-4 rounded border border-[#3A4754]">
+                <p className="text-xs text-[#C0A66B] uppercase tracking-wide mb-1">Report</p>
+                <p className="text-[#E1E3E4]">{selectedCheckpoint.report}</p>
               </div>
 
-              <div className="bg-gray-800 p-4 rounded border border-gray-700">
-                <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Transaction Hash</p>
-                <p className="text-white font-mono text-sm break-all">
+              <div className="bg-[#1E252F] p-4 rounded border border-[#3A4754]">
+                <p className="text-xs text-[#C0A66B] uppercase tracking-wide mb-1">Transaction Hash</p>
+                <p className="text-[#E1E3E4] font-mono text-sm break-all">
                   {selectedCheckpoint.transactionHash || 'N/A'}
                 </p>
               </div>
 
               <div>
-                <label className="text-xs text-gray-400 uppercase tracking-wide mb-2 block flex items-center gap-2">
+                <label className="text-xs text-[#C0A66B] uppercase tracking-wide mb-2 block flex items-center gap-2">
                   <FileText className="w-4 h-4" />
                   Auditor Notes
                 </label>
@@ -217,7 +217,7 @@ export default function AuditorPanel() {
                   value={auditorNotes}
                   onChange={(e) => setAuditorNotes(e.target.value)}
                   rows={3}
-                  className="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-green-500 transition-colors resize-none"
+                  className="w-full bg-[#1E252F] border border-[#3A4754] rounded px-4 py-2 text-[#E1E3E4] focus:outline-none focus:border-[#5E725A] transition-colors resize-none placeholder-[#6B7280]"
                   placeholder="Add verification notes..."
                 />
               </div>
@@ -227,7 +227,7 @@ export default function AuditorPanel() {
               <button
                 onClick={() => handleVerify(selectedCheckpoint)}
                 disabled={verifying}
-                className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-700 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors flex items-center justify-center gap-2"
+                className="flex-1 bg-[#5E725A] hover:bg-[#4A5E43] disabled:bg-[#3A4754] disabled:cursor-not-allowed text-[#E1E3E4] font-semibold py-3 px-6 rounded transition-colors flex items-center justify-center gap-2"
               >
                 <CheckCircle className="w-5 h-5" />
                 Verify & Approve
@@ -235,7 +235,7 @@ export default function AuditorPanel() {
               <button
                 onClick={() => handleFlag(selectedCheckpoint)}
                 disabled={verifying}
-                className="flex-1 bg-red-600 hover:bg-red-700 disabled:bg-gray-700 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors flex items-center justify-center gap-2"
+                className="flex-1 bg-red-600 hover:bg-red-700 disabled:bg-[#3A4754] disabled:cursor-not-allowed text-[#E1E3E4] font-semibold py-3 px-6 rounded transition-colors flex items-center justify-center gap-2"
               >
                 <XCircle className="w-5 h-5" />
                 Flag Issue
@@ -247,4 +247,3 @@ export default function AuditorPanel() {
     </div>
   );
 }
-

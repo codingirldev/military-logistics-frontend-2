@@ -25,15 +25,15 @@ export default function TrackView({ track, onCrateClick }: TrackViewProps) {
   const getStatusColor = (status: Crate['status']) => {
     switch (status) {
       case 'Loaded':
-        return 'bg-blue-600';
+        return 'bg-[#5E725A]';
       case 'In Transit':
-        return 'bg-yellow-600';
+        return 'bg-[#C0A66B]';
       case 'Verified':
-        return 'bg-green-600';
+        return 'bg-[#708C6E]';
       case 'Delivered':
-        return 'bg-gray-600';
+        return 'bg-[#6B7280]';
       default:
-        return 'bg-gray-700';
+        return 'bg-[#3A4754]';
     }
   };
 
@@ -64,27 +64,27 @@ export default function TrackView({ track, onCrateClick }: TrackViewProps) {
   });
 
   return (
-    <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+    <div className="bg-[#212830] border border-[#3A4754] rounded p-6">
       {/* Track Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <Truck className="w-8 h-8 text-green-500" />
+          <Truck className="w-8 h-8 text-[#5E725A]" />
           <div>
-            <h2 className="text-2xl font-bold text-white">{track.name}</h2>
-            <p className="text-gray-400 text-sm">
-              Status: <span className="text-green-400">{track.status}</span>
+            <h2 className="text-2xl font-bold text-[#E1E3E4]">{track.name}</h2>
+            <p className="text-[#9CA3AF] text-sm">
+              Status: <span className="text-[#5E725A] font-semibold">{track.status}</span>
             </p>
           </div>
         </div>
         <div className="text-right">
-          <p className="text-gray-400 text-sm">Crates</p>
-          <p className="text-white text-2xl font-bold">{track.crates.length}</p>
+          <p className="text-[#9CA3AF] text-sm uppercase tracking-wide">Crates</p>
+          <p className="text-[#E1E3E4] text-2xl font-bold">{track.crates.length}</p>
         </div>
       </div>
 
       {/* Grid Visualization */}
       <div className="mb-6">
-        <h3 className="text-sm text-gray-400 uppercase tracking-wide mb-3">
+        <h3 className="text-sm text-[#C0A66B] uppercase tracking-wide mb-3 font-semibold">
           Top-Down View
         </h3>
         <div className="grid grid-cols-5 gap-2">
@@ -92,8 +92,8 @@ export default function TrackView({ track, onCrateClick }: TrackViewProps) {
             row.map((crate, colIndex) => (
               <div
                 key={`${rowIndex}-${colIndex}`}
-                className={`aspect-square rounded border-2 border-gray-700 flex items-center justify-center cursor-pointer transition-all hover:scale-105 ${
-                  crate ? `${getStatusColor(crate.status)} border-gray-500` : 'bg-gray-800'
+                className={`aspect-square rounded border-2 border-[#3A4754] flex items-center justify-center cursor-pointer transition-all hover:scale-105 ${
+                  crate ? `${getStatusColor(crate.status)} border-[#5E725A]` : 'bg-[#1E252F]'
                 }`}
                 onClick={() => crate && handleCrateClick(crate)}
                 title={crate ? `${crate.id} - ${crate.status}` : 'Empty slot'}
@@ -101,12 +101,12 @@ export default function TrackView({ track, onCrateClick }: TrackViewProps) {
                 {crate ? (
                   <div className="text-center">
                     <div className="text-2xl mb-1">{getStatusIcon(crate.status)}</div>
-                    <div className="text-xs font-mono text-white">
+                    <div className="text-xs font-mono text-[#E1E3E4]">
                       {crate.id.split('-')[1]}
                     </div>
                   </div>
                 ) : (
-                  <div className="text-gray-600 text-xs">•</div>
+                  <div className="text-[#3A4754] text-xs">•</div>
                 )}
               </div>
             ))
@@ -116,25 +116,25 @@ export default function TrackView({ track, onCrateClick }: TrackViewProps) {
 
       {/* Crate List */}
       <div>
-        <h3 className="text-sm text-gray-400 uppercase tracking-wide mb-3">
+        <h3 className="text-sm text-[#C0A66B] uppercase tracking-wide mb-3 font-semibold">
           Crate Details
         </h3>
         <div className="space-y-2 max-h-64 overflow-y-auto">
           {track.crates.map((crate) => (
             <div
               key={crate.id}
-              className="bg-gray-800 border border-gray-700 rounded p-3 flex items-center justify-between hover:bg-gray-750 transition-colors cursor-pointer"
+              className="bg-[#1E252F] border border-[#3A4754] rounded p-3 flex items-center justify-between hover:bg-[#2A3542] hover:border-[#5E725A] transition-colors cursor-pointer"
               onClick={() => handleCrateClick(crate)}
             >
               <div className="flex items-center gap-3">
                 <div className={`w-3 h-3 rounded-full ${getStatusColor(crate.status)}`} />
                 <div>
-                  <p className="text-white font-mono text-sm">{crate.id}</p>
-                  <p className="text-gray-400 text-xs">{crate.unitName}</p>
+                  <p className="text-[#E1E3E4] font-mono text-sm">{crate.id}</p>
+                  <p className="text-[#9CA3AF] text-xs">{crate.unitName}</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-gray-400 text-xs">{crate.status}</p>
+                <p className="text-[#9CA3AF] text-xs uppercase tracking-wide">{crate.status}</p>
               </div>
             </div>
           ))}
@@ -165,4 +165,3 @@ export default function TrackView({ track, onCrateClick }: TrackViewProps) {
     </div>
   );
 }
-

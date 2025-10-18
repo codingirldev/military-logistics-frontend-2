@@ -5,7 +5,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-rajdhani);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -43,72 +43,73 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.375rem;
+  /* Modern Tactical Military Color Palette */
+  --background: #1E252F;
+  --foreground: #E1E3E4;
+  --card: #212830;
+  --card-foreground: #E1E3E4;
+  --popover: #212830;
+  --popover-foreground: #E1E3E4;
+  --primary: #5E725A;
+  --primary-foreground: #E1E3E4;
+  --secondary: #708C6E;
+  --secondary-foreground: #E1E3E4;
+  --muted: #212830;
+  --muted-foreground: #9CA3AF;
+  --accent: #C0A66B;
+  --accent-foreground: #1E252F;
+  --destructive: #DC2626;
+  --border: #3A4754;
+  --input: #3A4754;
+  --ring: #5E725A;
+  --chart-1: #5E725A;
+  --chart-2: #C0A66B;
+  --chart-3: #708C6E;
+  --chart-4: #4B4032;
+  --chart-5: #6B7280;
+  --sidebar: #212830;
+  --sidebar-foreground: #E1E3E4;
+  --sidebar-primary: #5E725A;
+  --sidebar-primary-foreground: #E1E3E4;
+  --sidebar-accent: #2A3542;
+  --sidebar-accent-foreground: #E1E3E4;
+  --sidebar-border: #3A4754;
+  --sidebar-ring: #5E725A;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #1E252F;
+  --foreground: #E1E3E4;
+  --card: #212830;
+  --card-foreground: #E1E3E4;
+  --popover: #212830;
+  --popover-foreground: #E1E3E4;
+  --primary: #5E725A;
+  --primary-foreground: #E1E3E4;
+  --secondary: #708C6E;
+  --secondary-foreground: #E1E3E4;
+  --muted: #212830;
+  --muted-foreground: #9CA3AF;
+  --accent: #C0A66B;
+  --accent-foreground: #1E252F;
+  --destructive: #DC2626;
+  --border: #3A4754;
+  --input: #3A4754;
+  --ring: #5E725A;
+  --chart-1: #5E725A;
+  --chart-2: #C0A66B;
+  --chart-3: #708C6E;
+  --chart-4: #4B4032;
+  --chart-5: #6B7280;
+  --sidebar: #212830;
+  --sidebar-foreground: #E1E3E4;
+  --sidebar-primary: #5E725A;
+  --sidebar-primary-foreground: #E1E3E4;
+  --sidebar-accent: #2A3542;
+  --sidebar-accent-foreground: #E1E3E4;
+  --sidebar-border: #3A4754;
+  --sidebar-ring: #5E725A;
 }
 
 @layer base {
@@ -117,5 +118,46 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-rajdhani), sans-serif;
+  }
+  
+  /* Tactical military aesthetic refinements */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: 0.025em;
+  }
+  
+  /* Subtle tactical grid pattern overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(rgba(192, 166, 107, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(192, 166, 107, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Tactical UI refinements */
+  button, a {
+    @apply transition-all duration-200;
+  }
+  
+  /* Subtle glow effects for active elements */
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(94, 114, 90, 0.2);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(192, 166, 107, 0.2);
+  }
+  
+  .glow-success {
+    box-shadow: 0 0 15px rgba(112, 140, 110, 0.25);
   }
 }

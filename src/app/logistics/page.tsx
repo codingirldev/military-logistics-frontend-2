@@ -93,32 +93,28 @@ export default function LogisticsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
-      {/* Subtle Background Effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-900/10 rounded-full blur-3xl"></div>
-      </div>
-
+    <div className="min-h-screen bg-[#1E252F] text-[#E2E2E2] relative overflow-hidden">
       {/* Header */}
-      <header className="bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 px-6 py-4 relative z-10">
+      <header className="bg-[#212830] border-b border-[#3A4754] px-6 py-4 relative z-10">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden text-gray-400 hover:text-blue-400 transition-colors"
+              className="lg:hidden text-[#9CA3AF] hover:text-[#C0A66B] transition-colors"
             >
               {sidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <Package className="w-7 h-7 text-blue-400" />
-              <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                Military Logistics Checkpoint
+            <h1 className="text-2xl font-bold text-[#E1E3E4] flex items-center gap-2">
+              <Package className="w-7 h-7 text-[#C0A66B]" />
+              <span>
+                <span className="text-white">Military</span>{' '}
+                <span className="text-[#5E725A]">Logistics</span>{' '}
+                <span className="text-[#C0A66B]">Checkpoint</span>
               </span>
             </h1>
           </div>
-          <div className="text-sm text-gray-400">
-            System Status: <span className="text-emerald-400 font-semibold">●</span> <span className="text-emerald-400">Operational</span>
+          <div className="text-sm text-[#9CA3AF]">
+            System Status: <span className="text-[#5E725A] font-semibold">●</span> <span className="text-[#5E725A]">OPERATIONAL</span>
           </div>
         </div>
       </header>
@@ -128,15 +124,15 @@ export default function LogisticsPage() {
         <aside
           className={`${
             sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-          } fixed lg:relative lg:translate-x-0 w-64 bg-slate-900/90 backdrop-blur-sm border-r border-slate-800 transition-transform duration-300 z-40 overflow-y-auto`}
+          } fixed lg:relative lg:translate-x-0 w-64 bg-[#212830] border-r border-[#3A4754] transition-transform duration-300 z-40 overflow-y-auto`}
         >
           <nav className="p-4 space-y-2">
             <button
               onClick={() => setCurrentView('dashboard')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 ${
                 currentView === 'dashboard'
-                  ? 'bg-gradient-to-r from-blue-600 to-emerald-600 text-white shadow-lg shadow-blue-900/50'
-                  : 'text-gray-400 hover:bg-slate-800 hover:text-blue-400 hover:border-blue-500/50 border border-transparent'
+                  ? 'bg-[#5E725A] text-[#E1E3E4]'
+                  : 'text-[#9CA3AF] hover:bg-[#2A3542]'
               }`}
             >
               <LayoutDashboard className="w-5 h-5" />
@@ -145,10 +141,10 @@ export default function LogisticsPage() {
 
             <button
               onClick={() => setCurrentView('tracks')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 ${
                 currentView === 'tracks'
-                  ? 'bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg shadow-blue-900/50'
-                  : 'text-gray-400 hover:bg-slate-800 hover:text-blue-400 hover:border-blue-600/50 border border-transparent'
+                  ? 'bg-[#5E725A] text-[#E1E3E4]'
+                  : 'text-[#9CA3AF] hover:bg-[#2A3542]'
               }`}
             >
               <Package className="w-5 h-5" />
@@ -157,10 +153,10 @@ export default function LogisticsPage() {
 
             <button
               onClick={() => setCurrentView('checkpoints')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 ${
                 currentView === 'checkpoints'
-                  ? 'bg-gradient-to-r from-emerald-600 to-blue-500 text-white shadow-lg shadow-emerald-900/50'
-                  : 'text-gray-400 hover:bg-slate-800 hover:text-emerald-400 hover:border-emerald-500/50 border border-transparent'
+                  ? 'bg-[#5E725A] text-[#E1E3E4]'
+                  : 'text-[#9CA3AF] hover:bg-[#2A3542]'
               }`}
             >
               <FileCheck className="w-5 h-5" />
@@ -169,10 +165,10 @@ export default function LogisticsPage() {
 
             <button
               onClick={() => setCurrentView('auditor')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 ${
                 currentView === 'auditor'
-                  ? 'bg-gradient-to-r from-blue-800 to-blue-600 text-white shadow-lg shadow-blue-900/50'
-                  : 'text-gray-400 hover:bg-slate-800 hover:text-blue-300 hover:border-blue-700/50 border border-transparent'
+                  ? 'bg-[#5E725A] text-[#E1E3E4]'
+                  : 'text-[#9CA3AF] hover:bg-[#2A3542]'
               }`}
             >
               <Shield className="w-5 h-5" />
@@ -181,8 +177,8 @@ export default function LogisticsPage() {
           </nav>
 
           {/* Track List */}
-          <div className="p-4 border-t border-slate-800">
-            <h3 className="text-xs text-blue-400 uppercase tracking-wide mb-3 px-4 font-semibold">
+          <div className="p-4 border-t border-[#3A4754]">
+            <h3 className="text-xs text-[#C0A66B] uppercase tracking-wide mb-3 px-4 font-semibold">
               Active Tracks
             </h3>
             <div className="space-y-2">
@@ -193,14 +189,14 @@ export default function LogisticsPage() {
                     setSelectedTrack(track);
                     setCurrentView('tracks');
                   }}
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 ${
+                  className={`w-full text-left px-4 py-3 rounded transition-all duration-300 ${
                     selectedTrack.id === track.id
-                      ? 'bg-slate-800 border border-blue-500 shadow-lg shadow-blue-900/20'
-                      : 'text-gray-400 hover:bg-slate-800 hover:text-blue-400 hover:border-blue-500/50 border border-transparent'
+                      ? 'bg-[#2A3542] border border-[#C0A66B]'
+                      : 'text-[#9CA3AF] hover:bg-[#2A3542]'
                   }`}
                 >
                   <p className="font-semibold text-sm">{track.name}</p>
-                  <p className="text-xs text-gray-500">{track.id}</p>
+                  <p className="text-xs text-[#6B7280]">{track.id}</p>
                 </button>
               ))}
             </div>
@@ -212,23 +208,23 @@ export default function LogisticsPage() {
           {currentView === 'dashboard' && (
             <div className="space-y-6">
               <div>
-                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h2 className="text-4xl font-bold mb-6 text-[#C0A66B] tracking-tight">
                   Dashboard Overview
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-slate-900/60 backdrop-blur-sm border border-blue-500/30 rounded-lg p-6 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20">
-                    <p className="text-gray-400 text-sm mb-2">Active Tracks</p>
-                    <p className="text-3xl font-bold text-blue-400">{mockTracks.length}</p>
+                  <div className="bg-[#212830] border border-[#3A4754] rounded p-6">
+                    <p className="text-[#9CA3AF] text-sm mb-2 uppercase tracking-wide">Active Tracks</p>
+                    <p className="text-4xl font-bold text-[#C0A66B]">{mockTracks.length}</p>
                   </div>
-                  <div className="bg-slate-900/60 backdrop-blur-sm border border-blue-600/30 rounded-lg p-6 hover:border-blue-600 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20">
-                    <p className="text-gray-400 text-sm mb-2">Total Crates</p>
-                    <p className="text-3xl font-bold text-blue-500">
+                  <div className="bg-[#212830] border border-[#3A4754] rounded p-6">
+                    <p className="text-[#9CA3AF] text-sm mb-2 uppercase tracking-wide">Total Crates</p>
+                    <p className="text-4xl font-bold text-[#5E725A]">
                       {mockTracks.reduce((sum, track) => sum + track.crates.length, 0)}
                     </p>
                   </div>
-                  <div className="bg-slate-900/60 backdrop-blur-sm border border-emerald-500/30 rounded-lg p-6 hover:border-emerald-500 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/20">
-                    <p className="text-gray-400 text-sm mb-2">In Transit</p>
-                    <p className="text-3xl font-bold text-emerald-400">
+                  <div className="bg-[#212830] border border-[#3A4754] rounded p-6">
+                    <p className="text-[#9CA3AF] text-sm mb-2 uppercase tracking-wide">In Transit</p>
+                    <p className="text-4xl font-bold text-[#C0A66B]">
                       {mockTracks
                         .flatMap(t => t.crates)
                         .filter(c => c.status === 'In Transit').length}
@@ -238,7 +234,7 @@ export default function LogisticsPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-4">Recent Activity</h3>
+                <h3 className="text-xl font-semibold mb-4 text-[#E1E3E4]">Recent Activity</h3>
                 <CheckpointTable />
               </div>
             </div>
@@ -246,7 +242,7 @@ export default function LogisticsPage() {
 
           {currentView === 'tracks' && (
             <div>
-              <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-6 text-[#C0A66B] tracking-tight">
                 Track Visualization
               </h2>
               <TrackView track={selectedTrack} onCrateClick={handleCrateClick} />
@@ -255,7 +251,7 @@ export default function LogisticsPage() {
 
           {currentView === 'checkpoints' && (
             <div>
-              <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-6 text-[#C0A66B] tracking-tight">
                 Checkpoint Records
               </h2>
               <CheckpointTable />
@@ -272,4 +268,3 @@ export default function LogisticsPage() {
     </div>
   );
 }
-
