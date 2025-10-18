@@ -6,7 +6,7 @@ import type { Checkpoint } from '@/types/logistics';
 
 export class BlockchainService {
   private provider: ethers.JsonRpcProvider | null = null;
-  private signer: ethers.Wallet | null = null;
+  private signer: ethers.Signer | null = null;
 
   constructor() {
     // Initialize with a mock provider for development
