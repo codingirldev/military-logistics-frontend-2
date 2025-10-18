@@ -152,7 +152,7 @@ export default function CheckpointTable({ crateId, trackId }: CheckpointTablePro
         {/* Sort */}
         <select
           value={sortBy}
-          onChange={(e) => setSortBy(e.target.value as any)}
+          onChange={(e) => setSortBy(e.target.value as 'date' | 'crate' | 'track')}
           className="bg-[#1E252F] border border-[#3A4754] rounded px-4 py-2 text-[#E1E3E4] focus:outline-none focus:border-[#5E725A] transition-colors"
         >
           <option value="date">Sort by Date</option>
@@ -163,7 +163,7 @@ export default function CheckpointTable({ crateId, trackId }: CheckpointTablePro
         {/* Status Filter */}
         <select
           value={filterStatus}
-          onChange={(e) => setFilterStatus(e.target.value as any)}
+          onChange={(e) => setFilterStatus(e.target.value as 'all' | 'verified' | 'flagged')}
           className="bg-[#1E252F] border border-[#3A4754] rounded px-4 py-2 text-[#E1E3E4] focus:outline-none focus:border-[#5E725A] transition-colors"
         >
           <option value="all">All Status</option>

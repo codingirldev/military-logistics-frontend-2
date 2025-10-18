@@ -28,7 +28,19 @@ export default function CheckpointForm({
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [txHash, setTxHash] = useState<string | null>(null);
-  const [crateState, setCrateState] = useState<any>(null);
+  const [crateState, setCrateState] = useState<{
+    crateId: string;
+    trackId: string;
+    unitName: string;
+    status: string;
+    lastCheckpoint?: {
+      timestamp: string;
+      location: { lat: number; lng: number };
+      operator: string;
+    };
+    totalCheckpoints: number;
+    verified: boolean;
+  } | null>(null);
   const [hexString, setHexString] = useState('');
   const [status, setStatus] = useState('');
   const [bgColor, setBgColor] = useState<'violet' | 'yellow'>('violet');

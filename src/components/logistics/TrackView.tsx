@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Package, Truck } from 'lucide-react';
+import { Truck } from 'lucide-react';
 import type { Crate, Track } from '@/types/logistics';
 import CheckpointForm from './CheckpointForm';
 

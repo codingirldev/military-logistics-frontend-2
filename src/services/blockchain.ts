@@ -53,7 +53,7 @@ export class BlockchainService {
     }
   }
 
-  async verifyCheckpoint(checkpointId: string): Promise<boolean> {
+  async verifyCheckpoint(_checkpointId: string): Promise<boolean> {
     try {
       // Mock verification
       await new Promise(resolve => setTimeout(resolve, 500));
