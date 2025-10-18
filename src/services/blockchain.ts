@@ -114,8 +114,14 @@ export class BlockchainService {
     return mockCheckpoints;
   }
 
-  getCurrentAccount(): string | null {
-    return this.signer?.address || null;
+  async getCurrentAccount(): Promise<string | null> {
+    if (!this.signer) return null;
+    try {
+      return await this.signer.getAddress();
+    } catch (error) {
+      console.error('Failed to get address:', error);
+      return null;
+    }
   }
 }
 
